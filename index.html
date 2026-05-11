@@ -283,7 +283,7 @@ function setLang(l){applyLang(l);}
 
 async function init(){
   try{
-    const r=await fetch('https://couriercenter.github.io/courier-ratings/history.json?t='+Date.now());
+    const r=await fetch('history.json?t=' + Date.now());
     const h=await r.json();
     const snaps=h.snapshots, latest=snaps[snaps.length-1], first=snaps[0];
     LATEST_LABEL=latest.label;
