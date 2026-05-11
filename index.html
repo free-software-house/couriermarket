@@ -298,17 +298,14 @@ async function init(){
 
     document.getElementById('loading').style.display='none';
     document.getElementById('app').style.display='block';
-    applyLang('el');renderChart();
+    const initialLang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'el';
+    applyLang(initialLang);renderChart();
   }catch(e){
     document.getElementById('loading').textContent='Σφάλμα φόρτωσης. Δοκιμάστε ξανά.';
     console.error(e);
   }
 }
 init();
-
-// Auto-detect lang from URL param
-const urlLang = new URLSearchParams(window.location.search).get('lang');
-if(urlLang === 'en') setLang('en');
 
 // ── DETAIL MODAL ──────────────────────────────────────────────────────
 let detailPage = 1;
