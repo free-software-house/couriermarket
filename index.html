@@ -99,11 +99,11 @@ footer a{color:var(--cc);text-decoration:none}
       
       <!-- ΝΕΟΣ ΤΙΤΛΟΣ -->
     <div style="text-align:center;margin-bottom:34px">
-      <h1 style="font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;color:var(--dark)">
-        Συγκριτικά στοιχεία των 5 μεγαλύτερων εταιριών ταχυμεταφορών<br>
-        <span style="color:var(--cc)">με βάση τις αξιολογήσεις Google</span>
-      </h1>
-    </div>
+  <h1 style="font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;color:var(--dark)">
+    <span data-i18n="mainTitle1">Συγκριτικά στοιχεία των 5 εταιριών ταχυμεταφορών</span><br>
+    <span data-i18n="mainTitle2" style="color:var(--cc)">με τις περισσότερες αξιολογήσεις στο Google</span>
+  </h1>
+</div>
       
       <div class="section-header">
         <div class="section-tag" data-i18n="rankTag">Κατάταξη</div>
@@ -254,8 +254,83 @@ const REGION_ORDER = ['ΑΤΤΙΚΗ','Κεντρική Ελλάδα','Θεσσα
 const REGION_EN = {'ΑΤΤΙΚΗ':'Attica','Κεντρική Ελλάδα':'Central Greece','Θεσσαλονίκη':'Thessaloniki','Βόρεια Ελλάδα':'Northern Greece','Δυτική Ελλάδα (με Κέρκυρα)':'Western Greece (incl. Corfu)','Πελοπόννησος':'Peloponnese','ΚΡΗΤΗ':'Crete','Υπόλοιπα νησιά':'Other Islands'};
 
 const T = {
-  el:{rankTag:'Κατάταξη',rankTitle:'Σύγκριση αγοράς — Weighted Average Rating',rankSub:'Βασισμένη στον αριθμό κριτικών κάθε καταστήματος · Δεδομένα:',trendTag:'Τάση',trendTitle:'Εξέλιξη Weighted Average — 2026',trendSub:'Επίλεξε εταιρίες για σύγκριση',regionTag:'Ανά περιοχή',regionTitle:'Αποτελέσματα ανά περιοχή',regionSub:'Κατάταξη όλων των εταιριών σε κάθε γεωγραφική περιοχή',methTitle:'Πώς υπολογίζεται η αξιολόγηση',meth1h:'Weighted Average',meth1p:'Τα καταστήματα με περισσότερες κριτικές έχουν μεγαλύτερο βάρος. Αποφεύγει στρεβλώσεις από μικρά σημεία.',meth2h:'Αυτόματη ενημέρωση',meth2p:'Ανανέωση κάθε Κυριακή μέσω Google Places API. Χωρίς επεξεργασία ή φιλτράρισμα.',meth3h:'Πλήρης διαφάνεια',meth3p:'Ο κώδικας είναι δημόσια διαθέσιμος. Ο καθένας μπορεί να επαληθεύσει τη μεθοδολογία.',meth4h:'Πανελλαδική κάλυψη',meth4p:'Όλα τα καταστήματα σε όλη την Ελλάδα — ηπειρωτικά, νησιά, Κρήτη.',footerText:'Τα στοιχεία εμφανίζονται αυτούσια από δημόσια διαθέσιμα δεδομένα του Google Places API, χωρίς χειροκίνητη παρέμβαση ή τροποποίηση. Η μεθοδολογία συλλογής και υπολογισμού είναι διαθέσιμη δημόσια:',updated:'Τελευταία ενημέρωση:',reviews:n=>n.toLocaleString('el-GR')+' κριτικές',vsFirst:d=>(d>0?'+':'')+d.toFixed(2)+' από 01/01',rname:r=>r,detailBtn:'Αναλυτικά αποτελέσματα ανά κατάστημα →',detailTitle:'Αναλυτικά αποτελέσματα ανά κατάστημα',detailClose:'✕ Επιστροφή',allBrands:'Όλες οι εταιρίες',allRegions:'Όλες οι περιοχές',allOpt:'Όλα',thCompany:'Εταιρία',thRegionCol:'Περιοχή',thAddress:'Διεύθυνση',thReviews:'Κριτικές'},
-  en:{rankTag:'Rankings',rankTitle:'Market comparison — Weighted Average Rating',rankSub:'Weighted by number of reviews per branch · Data:',trendTag:'Trend',trendTitle:'Weighted Average Trend — 2026',trendSub:'Select companies to compare',regionTag:'By region',regionTitle:'Results by region',regionSub:'Ranking of all companies in each geographic region',methTitle:'How the rating is calculated',meth1h:'Weighted Average',meth1p:'Branches with more reviews carry greater weight. Prevents distortion from small locations.',meth2h:'Automatic updates',meth2p:'Refreshed every Sunday via Google Places API. No processing or filtering.',meth3h:'Full transparency',meth3p:'The code is publicly available. Anyone can verify the methodology.',meth4h:'Nationwide coverage',meth4p:'All branches across Greece — mainland, islands, and Crete.',footerText:'The data is displayed as retrieved from publicly available Google Places API sources, without manual intervention or modification. The collection and calculation methodology is publicly available:',updated:'Last updated:',reviews:n=>n.toLocaleString('en-US')+' reviews',vsFirst:d=>(d>0?'+':'')+d.toFixed(2)+' since 01/01',rname:r=>REGION_EN[r]||r,detailBtn:'Detailed results by branch →',detailTitle:'Detailed results by branch',detailClose:'✕ Back',allBrands:'All companies',allRegions:'All regions',allOpt:'All',thCompany:'Company',thRegionCol:'Region',thAddress:'Address',thReviews:'Reviews'},
+  el:{
+    mainTitle1:'Συγκριτικά στοιχεία των 5 εταιριών ταχυμεταφορών',
+    mainTitle2:'με τις περισσότερες αξιολογήσεις στο Google',
+
+    rankTag:'Κατάταξη',
+    rankTitle:'Σύγκριση αγοράς — Weighted Average Rating',
+    rankSub:'Βασισμένη στον αριθμό κριτικών κάθε καταστήματος · Δεδομένα:',
+    trendTag:'Τάση',
+    trendTitle:'Εξέλιξη Weighted Average — 2026',
+    trendSub:'Επίλεξε εταιρίες για σύγκριση',
+    regionTag:'Ανά περιοχή',
+    regionTitle:'Αποτελέσματα ανά περιοχή',
+    regionSub:'Κατάταξη όλων των εταιριών σε κάθε γεωγραφική περιοχή',
+    methTitle:'Πώς υπολογίζεται η αξιολόγηση',
+    meth1h:'Weighted Average',
+    meth1p:'Τα καταστήματα με περισσότερες κριτικές έχουν μεγαλύτερο βάρος. Αποφεύγει στρεβλώσεις από μικρά σημεία.',
+    meth2h:'Αυτόματη ενημέρωση',
+    meth2p:'Ανανέωση κάθε Κυριακή μέσω Google Places API. Χωρίς επεξεργασία ή φιλτράρισμα.',
+    meth3h:'Πλήρης διαφάνεια',
+    meth3p:'Ο κώδικας είναι δημόσια διαθέσιμος. Ο καθένας μπορεί να επαληθεύσει τη μεθοδολογία.',
+    meth4h:'Πανελλαδική κάλυψη',
+    meth4p:'Όλα τα καταστήματα σε όλη την Ελλάδα — ηπειρωτικά, νησιά, Κρήτη.',
+    footerText:'Τα στοιχεία εμφανίζονται αυτούσια από δημόσια διαθέσιμα δεδομένα του Google Places API, χωρίς χειροκίνητη παρέμβαση ή τροποποίηση. Η μεθοδολογία συλλογής και υπολογισμού είναι διαθέσιμη δημόσια:',
+    updated:'Τελευταία ενημέρωση:',
+    reviews:n=>n.toLocaleString('el-GR')+' κριτικές',
+    vsFirst:d=>(d>0?'+':'')+d.toFixed(2)+' από 01/01',
+    rname:r=>r,
+    detailBtn:'Αναλυτικά αποτελέσματα ανά κατάστημα →',
+    detailTitle:'Αναλυτικά αποτελέσματα ανά κατάστημα',
+    detailClose:'✕ Επιστροφή',
+    allBrands:'Όλες οι εταιρίες',
+    allRegions:'Όλες οι περιοχές',
+    allOpt:'Όλα',
+    thCompany:'Εταιρία',
+    thRegionCol:'Περιοχή',
+    thAddress:'Διεύθυνση',
+    thReviews:'Κριτικές'
+  },
+
+  en:{
+    mainTitle1:'Comparative data of the 5 courier companies',
+    mainTitle2:'with the highest number of Google reviews',
+
+    rankTag:'Rankings',
+    rankTitle:'Market comparison — Weighted Average Rating',
+    rankSub:'Weighted by number of reviews per branch · Data:',
+    trendTag:'Trend',
+    trendTitle:'Weighted Average Trend — 2026',
+    trendSub:'Select companies to compare',
+    regionTag:'By region',
+    regionTitle:'Results by region',
+    regionSub:'Ranking of all companies in each geographic region',
+    methTitle:'How the rating is calculated',
+    meth1h:'Weighted Average',
+    meth1p:'Branches with more reviews carry greater weight. Prevents distortion from small locations.',
+    meth2h:'Automatic updates',
+    meth2p:'Refreshed every Sunday via Google Places API. No processing or filtering.',
+    meth3h:'Full transparency',
+    meth3p:'The code is publicly available. Anyone can verify the methodology.',
+    meth4h:'Nationwide coverage',
+    meth4p:'All branches across Greece — mainland, islands, and Crete.',
+    footerText:'The data is displayed as retrieved from publicly available Google Places API sources, without manual intervention or modification. The collection and calculation methodology is publicly available:',
+    updated:'Last updated:',
+    reviews:n=>n.toLocaleString('en-US')+' reviews',
+    vsFirst:d=>(d>0?'+':'')+d.toFixed(2)+' since 01/01',
+    rname:r=>REGION_EN[r]||r,
+    detailBtn:'Detailed results by branch →',
+    detailTitle:'Detailed results by branch',
+    detailClose:'✕ Back',
+    allBrands:'All companies',
+    allRegions:'All regions',
+    allOpt:'All',
+    thCompany:'Company',
+    thRegionCol:'Region',
+    thAddress:'Address',
+    thReviews:'Reviews'
+  },
 };
 
 let lang='el', SNAPSHOTS=[], LATEST={}, REGION_DATA={}, LATEST_LABEL='';
