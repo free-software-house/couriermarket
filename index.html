@@ -5,19 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GR Courier Market — Google Ratings</title>
 
-<!-- Google Analytics GA4 - GOOGLE_MAPS_COURIER_MKT -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TF6PYVFF01"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
-
   gtag('js', new Date());
-
   gtag('config', 'G-TF6PYVFF01', {
     page_title: 'GOOGLE_MAPS_COURIER_MKT',
     page_path: window.location.pathname + window.location.search
   });
-
   gtag('event', 'page_view_google_maps_courier_mkt', {
     project_name: 'GOOGLE_MAPS_COURIER_MKT',
     page_location: window.location.href
@@ -27,8 +23,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+
 <style>
-:root{--cc:#F47920;--dark:#1A1A2E;--bg:#F8F7F4;--card:#fff;--border:#E8E4DE;--muted:#9CA3AF;--secondary:#6B7280;--green:#059669;--green-bg:#D1FAE5;--red:#DC2626;--red-bg:#FEE2E2;--r:16px;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04)}
+:root{--primary:#2563EB;--dark:#1A1A2E;--bg:#F8F7F4;--card:#fff;--border:#E8E4DE;--muted:#9CA3AF;--secondary:#6B7280;--green:#059669;--green-bg:#D1FAE5;--red:#DC2626;--red-bg:#FEE2E2;--r:16px;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--dark);font-size:15px;line-height:1.6}
 nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;height:60px}
@@ -40,20 +37,20 @@ nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,.92);backdrop-
 section{padding:56px 0}
 section+section{padding-top:0}
 .section-header{margin-bottom:28px}
-.section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--cc);margin-bottom:6px}
+.section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--primary);margin-bottom:6px}
 .section-header h2{font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,28px);font-weight:700;letter-spacing:-.5px}
 .section-header p{color:var(--secondary);margin-top:6px;font-size:13px}
 .ranking-grid{display:grid;gap:10px}
 .rank-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;display:flex;align-items:center;gap:18px;box-shadow:var(--shadow);transition:transform .15s;position:relative;overflow:hidden}
 .rank-card:hover{transform:translateY(-2px)}
-.rank-card.rank-1{border-color:var(--cc);background:linear-gradient(135deg,#FFF7F0,#fff)}
-.rank-card.rank-1::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cc),#FFB347)}
+.rank-card.rank-1{border-color:var(--border);background:var(--card)}
+.rank-card.rank-1::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--dark)}
 .rank-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--border);min-width:32px;text-align:center}
-.rank-card.rank-1 .rank-num{color:var(--cc)}
+.rank-card.rank-1 .rank-num{color:var(--dark)}
 .rank-logo{width:76px;height:34px;object-fit:contain;flex-shrink:0}
 .rank-info{flex:1}
 .rank-score{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1;margin-bottom:2px}
-.rank-card.rank-1 .rank-score{color:var(--cc)}
+.rank-card.rank-1 .rank-score{color:var(--dark)}
 .rank-stars{color:#F59E0B;font-size:13px;letter-spacing:1px}
 .rank-meta{font-size:12px;color:var(--muted);margin-top:3px}
 .rank-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;margin-left:auto}
@@ -72,15 +69,16 @@ canvas{max-height:280px}
 .method-box{background:var(--dark);color:#fff;border-radius:var(--r);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .method-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:8px;grid-column:1/-1}
 .method-item{display:flex;gap:12px}
-.method-icon{width:34px;height:34px;border-radius:10px;background:rgba(244,121,32,.15);color:var(--cc);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.method-icon{width:34px;height:34px;border-radius:10px;background:rgba(37,99,235,.15);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .method-item h4{font-size:13px;font-weight:600;margin-bottom:3px}
 .method-item p{font-size:12px;color:rgba(255,255,255,.6);line-height:1.5}
 footer{border-top:1px solid var(--border);padding:24px clamp(16px,4vw,48px);font-size:12px;color:var(--muted)}
-footer a{color:var(--cc);text-decoration:none}
+footer a{color:var(--primary);text-decoration:none}
 #loading{display:flex;align-items:center;justify-content:center;height:300px;font-size:14px;color:var(--muted)}
 @media(max-width:640px){.method-box{grid-template-columns:1fr}.rank-logo{width:56px}}
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -96,15 +94,14 @@ footer a{color:var(--cc);text-decoration:none}
 <div id="app" style="display:none">
   <section>
     <div class="container">
-      
-      <!-- ΝΕΟΣ ΤΙΤΛΟΣ -->
-    <div style="text-align:center;margin-bottom:34px">
-  <h1 style="font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;color:var(--dark)">
-    <span data-i18n="mainTitle1">Συγκριτικά στοιχεία των 5 εταιριών ταχυμεταφορών</span><br>
-    <span data-i18n="mainTitle2" style="color:var(--cc)">με τις περισσότερες αξιολογήσεις στο Google</span>
-  </h1>
-</div>
-      
+
+      <div style="text-align:center;margin-bottom:34px">
+        <h1 style="font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;color:var(--dark)">
+          <span data-i18n="mainTitle1">Συγκριτικά στοιχεία των 5 εταιριών ταχυμεταφορών</span><br>
+          <span data-i18n="mainTitle2" style="color:var(--primary)">με τις περισσότερες αξιολογήσεις στο Google</span>
+        </h1>
+      </div>
+
       <div class="section-header">
         <div class="section-tag" data-i18n="rankTag">Κατάταξη</div>
         <h2 data-i18n="rankTitle">Σύγκριση αγοράς — Weighted Average Rating</h2>
@@ -139,22 +136,21 @@ footer a{color:var(--cc);text-decoration:none}
     </div>
   </section>
 
-  <!-- DETAIL LINK -->
   <section style="padding:0 0 48px">
     <div class="container" style="text-align:center">
-      <button onclick="openDetail()" style="padding:12px 28px;border-radius:100px;border:1.5px solid var(--cc);background:transparent;color:var(--cc);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--cc)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--cc)'" id="detail-btn">
+      <button onclick="openDetail()" style="padding:12px 28px;border-radius:100px;border:1.5px solid var(--primary);background:transparent;color:var(--primary);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--primary)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--primary)'" id="detail-btn">
         <span data-i18n="detailBtn">Αναλυτικά αποτελέσματα ανά κατάστημα →</span>
       </button>
     </div>
   </section>
 
-  <!-- DETAIL MODAL -->
   <div id="detail-modal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);overflow-y:auto">
     <div style="background:var(--bg);min-height:100vh;max-width:1080px;margin:0 auto;padding:0 0 48px">
       <div style="position:sticky;top:0;background:rgba(248,247,244,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;z-index:10">
         <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:16px" data-i18n="detailTitle">Αναλυτικά αποτελέσματα ανά κατάστημα</span>
         <button onclick="closeDetail()" style="padding:6px 16px;border-radius:100px;border:1px solid var(--border);background:var(--card);font-size:13px;cursor:pointer" data-i18n="detailClose">✕ Κλείσιμο</button>
       </div>
+
       <div style="padding:24px clamp(16px,4vw,48px)">
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
           <select id="d-brand" style="padding:6px 10px;border:.5px solid var(--border);border-radius:8px;font-size:13px;background:var(--card)" onchange="detailPage=1;renderDetail()">
@@ -171,6 +167,7 @@ footer a{color:var(--cc);text-decoration:none}
             <option value="999999" id="d-pagesize-all">Όλα</option>
           </select>
         </div>
+
         <div style="background:var(--card);border-radius:12px;box-shadow:var(--shadow)">
           <table style="width:100%;border-collapse:collapse;font-size:13px" id="detail-table">
             <thead>
@@ -186,6 +183,7 @@ footer a{color:var(--cc);text-decoration:none}
             <tbody id="detail-tbody"></tbody>
           </table>
         </div>
+
         <div id="detail-pagination" style="display:flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;color:var(--muted)"></div>
       </div>
     </div>
@@ -256,12 +254,13 @@ function detectRegion(lat,lng){
 }
 
 const BRANDS5 = [
-  { id:'Courier Center',     color:'#F47920', logo:'logos/courier_center.png' },
-  { id:'ACS',                color:'#CC0000', logo:'logos/acs.png' },
-  { id:'SPEEDEX',            color:'#00A650', logo:'logos/speedex.png' },
-  { id:'ΕΛΤΑ Courier',       color:'#C8102E', logo:'logos/elta_courier.png' },
-  { id:'Γενική Ταχυδρομική', color:'#003DA5', logo:'logos/geniki.png' },
+  { id:'Courier Center',     color:'#2563EB', logo:'logos/courier_center.png' },
+  { id:'ACS',                color:'#7C3AED', logo:'logos/acs.png' },
+  { id:'SPEEDEX',            color:'#059669', logo:'logos/speedex.png' },
+  { id:'ΕΛΤΑ Courier',       color:'#DC2626', logo:'logos/elta_courier.png' },
+  { id:'Γενική Ταχυδρομική', color:'#0F766E', logo:'logos/geniki.png' },
 ];
+
 const REGION_ORDER = ['ΑΤΤΙΚΗ','Κεντρική Ελλάδα','Θεσσαλονίκη','Βόρεια Ελλάδα','Δυτική Ελλάδα (με Κέρκυρα)','Πελοπόννησος','ΚΡΗΤΗ','Υπόλοιπα νησιά'];
 const REGION_EN = {'ΑΤΤΙΚΗ':'Attica','Κεντρική Ελλάδα':'Central Greece','Θεσσαλονίκη':'Thessaloniki','Βόρεια Ελλάδα':'Northern Greece','Δυτική Ελλάδα (με Κέρκυρα)':'Western Greece (incl. Corfu)','Πελοπόννησος':'Peloponnese','ΚΡΗΤΗ':'Crete','Υπόλοιπα νησιά':'Other Islands'};
 
@@ -269,10 +268,9 @@ const T = {
   el:{
     mainTitle1:'Συγκριτικά στοιχεία των 5 εταιριών ταχυμεταφορών',
     mainTitle2:'με τις περισσότερες αξιολογήσεις στο Google',
-
     rankTag:'Κατάταξη',
     rankTitle:'Σύγκριση αγοράς — Weighted Average Rating',
-    rankSub:'Βασισμένη στον αριθμό κριτικών κάθε καταστήματος · Δεδομένα:',
+    rankSub:'Οι εταιρίες επιλέχθηκαν βάσει του συνολικού αριθμού Google reviews. Η κατάταξη υπολογίζεται με weighted average ανά κατάστημα · Δεδομένα:',
     trendTag:'Τάση',
     trendTitle:'Εξέλιξη Weighted Average — 2026',
     trendSub:'Επίλεξε εταιρίες για σύγκριση',
@@ -308,10 +306,9 @@ const T = {
   en:{
     mainTitle1:'Comparative data of the 5 courier companies',
     mainTitle2:'with the highest number of Google reviews',
-
     rankTag:'Rankings',
     rankTitle:'Market comparison — Weighted Average Rating',
-    rankSub:'Weighted by number of reviews per branch · Data:',
+    rankSub:'Companies were selected based on total Google review volume. Ranking is calculated using weighted average per branch · Data:',
     trendTag:'Trend',
     trendTitle:'Weighted Average Trend — 2026',
     trendSub:'Select companies to compare',
@@ -346,15 +343,19 @@ const T = {
 };
 
 let lang='el', SNAPSHOTS=[], LATEST={}, REGION_DATA={}, LATEST_LABEL='';
-let trendChart=null, activeBrands=new Set(['Courier Center']);
+let trendChart=null, activeBrands=new Set(BRANDS5.map(b=>b.id));
 
-function stars(r){const f=Math.floor(r),h=r%1>=0.3?1:0;return'★'.repeat(f)+(h?'½':'')+'☆'.repeat(5-f-h);}
+function stars(r){
+  const f=Math.floor(r), h=r%1>=0.3?1:0;
+  return '★'.repeat(f)+(h?'½':'')+'☆'.repeat(5-f-h);
+}
 
 function renderRanking(){
   const t=T[lang];
   const sorted=[...BRANDS5].sort((a,b)=>(LATEST[b.id]?.score||0)-(LATEST[a.id]?.score||0));
   document.getElementById('ranking-grid').innerHTML=sorted.map((b,i)=>{
-    const d=LATEST[b.id]||{};const vs=d.vs01||0;
+    const d=LATEST[b.id]||{};
+    const vs=d.vs01||0;
     const bc=vs>0.005?'up':vs<-0.005?'down':'flat';
     return `<div class="rank-card rank-${i+1}"><div class="rank-num">${i+1}</div><img class="rank-logo" src="${b.logo}" alt="${b.id}" onerror="this.style.display='none'"><div class="rank-info"><div class="rank-score">${d.score?.toFixed(2)||'—'}</div><div class="rank-stars">${stars(d.score||0)}</div><div class="rank-meta">${t.reviews(d.reviews||0)}</div></div><span class="rank-badge ${bc}">${t.vsFirst(vs)}</span></div>`;
   }).join('');
@@ -362,15 +363,61 @@ function renderRanking(){
 }
 
 function renderChart(){
-  const ds=BRANDS5.filter(b=>activeBrands.has(b.id)).map(b=>({label:b.id,data:SNAPSHOTS.map(s=>s.data[b.id]),borderColor:b.color,backgroundColor:b.color+'18',borderWidth:b.id==='Courier Center'?3:1.5,pointRadius:4,tension:0.3,spanGaps:true}));
-  if(trendChart)trendChart.destroy();
-  trendChart=new Chart(document.getElementById('trend-chart'),{type:'line',data:{labels:SNAPSHOTS.map(s=>s.label),datasets:ds},options:{responsive:true,maintainAspectRatio:true,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.raw?.toFixed(2)||'—'}`},itemSort:(a,b)=>b.raw-a.raw}},scales:{y:{min:ctx=>{const v=ctx.chart.data.datasets.flatMap(d=>d.data).filter(x=>x!=null);return v.length?Math.floor((Math.min(...v)-.2)*10)/10:2},max:ctx=>{const v=ctx.chart.data.datasets.flatMap(d=>d.data).filter(x=>x!=null);return v.length?Math.ceil((Math.max(...v)+.2)*10)/10:5},ticks:{stepSize:0.1,font:{size:11}}},x:{ticks:{font:{size:11}}}}}});
+  const ds=BRANDS5.filter(b=>activeBrands.has(b.id)).map(b=>({
+    label:b.id,
+    data:SNAPSHOTS.map(s=>s.data[b.id]),
+    borderColor:b.color,
+    backgroundColor:b.color+'18',
+    borderWidth:2,
+    pointRadius:4,
+    tension:0.3,
+    spanGaps:true
+  }));
+
+  if(trendChart) trendChart.destroy();
+
+  trendChart=new Chart(document.getElementById('trend-chart'),{
+    type:'line',
+    data:{labels:SNAPSHOTS.map(s=>s.label),datasets:ds},
+    options:{
+      responsive:true,
+      maintainAspectRatio:true,
+      interaction:{mode:'index',intersect:false},
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.raw?.toFixed(2)||'—'}`},
+          itemSort:(a,b)=>b.raw-a.raw
+        }
+      },
+      scales:{
+        y:{
+          min:ctx=>{
+            const v=ctx.chart.data.datasets.flatMap(d=>d.data).filter(x=>x!=null);
+            return v.length?Math.floor((Math.min(...v)-.2)*10)/10:2;
+          },
+          max:ctx=>{
+            const v=ctx.chart.data.datasets.flatMap(d=>d.data).filter(x=>x!=null);
+            return v.length?Math.ceil((Math.max(...v)+.2)*10)/10:5;
+          },
+          ticks:{stepSize:0.1,font:{size:11}}
+        },
+        x:{ticks:{font:{size:11}}}
+      }
+    }
+  });
 }
 
 function renderChartFilters(){
   document.getElementById('chart-filters').innerHTML=BRANDS5.map(b=>`<button class="chart-btn ${activeBrands.has(b.id)?'active':''}" style="border-color:${b.color};${activeBrands.has(b.id)?`background:${b.color}`:`color:${b.color}`}" onclick="toggleBrand('${b.id}')">${b.id}</button>`).join('');
 }
-function toggleBrand(id){if(activeBrands.has(id)&&activeBrands.size===1)return;activeBrands.has(id)?activeBrands.delete(id):activeBrands.add(id);renderChartFilters();renderChart();}
+
+function toggleBrand(id){
+  if(activeBrands.has(id)&&activeBrands.size===1)return;
+  activeBrands.has(id)?activeBrands.delete(id):activeBrands.add(id);
+  renderChartFilters();
+  renderChart();
+}
 
 function renderRegions(){
   const t=T[lang];
@@ -378,23 +425,39 @@ function renderRegions(){
     const brands=REGION_DATA[region];
     if(!brands||!Object.keys(brands).length)return'';
     const sorted=Object.entries(brands).filter(([,d])=>d.score).sort((a,b)=>b[1].score-a[1].score);
+
     const rows=sorted.map(([brand,d],i)=>{
-      const b=BRANDS5.find(x=>x.id===brand);const isCC=brand==='Courier Center';
-      return `<div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:${i<sorted.length-1?'1px solid var(--border)':'none'}"><div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:${i===0?'var(--cc)':'var(--border)'};min-width:20px;text-align:center">${i+1}</div><img src="${b?.logo||''}" style="height:20px;width:56px;object-fit:contain;flex-shrink:0" alt="${brand}"><div style="flex:1"><div style="font-size:${isCC?'15px':'13px'};font-weight:${isCC?'700':'400'};color:${isCC?'var(--cc)':'var(--dark)'}">${d.score.toFixed(2)}</div><div style="font-size:11px;color:var(--muted)">${t.reviews(d.reviews||0)}</div></div></div>`;
+      const b=BRANDS5.find(x=>x.id===brand);
+      return `<div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:${i<sorted.length-1?'1px solid var(--border)':'none'}">
+        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:${i===0?'var(--dark)':'var(--border)'};min-width:20px;text-align:center">${i+1}</div>
+        <img src="${b?.logo||''}" style="height:20px;width:56px;object-fit:contain;flex-shrink:0" alt="${brand}">
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:400;color:var(--dark)">${d.score.toFixed(2)}</div>
+          <div style="font-size:11px;color:var(--muted)">${t.reviews(d.reviews||0)}</div>
+        </div>
+      </div>`;
     }).join('');
+
     return `<div class="region-card"><div class="region-name">${t.rname(region)}</div>${rows}</div>`;
   }).filter(Boolean).join('');
 }
 
 function applyLang(l){
-  lang=l;const t=T[l];
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(typeof t[k]==='string')el.textContent=t[k];});
+  lang=l;
+  const t=T[l];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(typeof t[k]==='string')el.textContent=t[k];
+  });
   document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.textContent===(l==='el'?'ΕΛ':'EN')));
   document.getElementById('nav-updated').textContent=t.updated+' '+LATEST_LABEL;
   const allOpt=document.getElementById('d-pagesize-all');if(allOpt)allOpt.textContent=t.allOpt||'Όλα';
   const revLbl=document.getElementById('dth-reviews-label');if(revLbl)revLbl.textContent=t.thReviews||'Κριτικές';
-  renderRanking();renderRegions();renderChartFilters();
+  renderRanking();
+  renderRegions();
+  renderChartFilters();
 }
+
 function setLang(l){applyLang(l);}
 
 async function init(){
@@ -402,11 +465,31 @@ async function init(){
     const r=await fetch('history.json?t=' + Date.now());
     const h=await r.json();
     const snaps=h.snapshots, latest=snaps[snaps.length-1], first=snaps[0];
+
     LATEST_LABEL=latest.label;
-    SNAPSHOTS=snaps.map(s=>({label:s.label.substring(0,5),data:Object.fromEntries(BRANDS5.map(b=>[b.id,s.summary[b.id]?.weighted_avg??null]))}));
-    BRANDS5.forEach(b=>{const cur=latest.summary[b.id]||{},fst=first.summary[b.id]||{};LATEST[b.id]={score:cur.weighted_avg||0,reviews:cur.total_reviews||0,vs01:(cur.weighted_avg&&fst.weighted_avg)?Math.round((cur.weighted_avg-fst.weighted_avg)*100)/100:0};});
-    REGION_ORDER.forEach(region=>{REGION_DATA[region]={};BRANDS5.forEach(b=>{const val=latest.regions[region+'||'+b.id];if(val)REGION_DATA[region][b.id]={score:val.weighted_avg,reviews:val.total_reviews};});});
-    // Cache places with region info for detail modal
+
+    SNAPSHOTS=snaps.map(s=>({
+      label:s.label.substring(0,5),
+      data:Object.fromEntries(BRANDS5.map(b=>[b.id,s.summary[b.id]?.weighted_avg??null]))
+    }));
+
+    BRANDS5.forEach(b=>{
+      const cur=latest.summary[b.id]||{}, fst=first.summary[b.id]||{};
+      LATEST[b.id]={
+        score:cur.weighted_avg||0,
+        reviews:cur.total_reviews||0,
+        vs01:(cur.weighted_avg&&fst.weighted_avg)?Math.round((cur.weighted_avg-fst.weighted_avg)*100)/100:0
+      };
+    });
+
+    REGION_ORDER.forEach(region=>{
+      REGION_DATA[region]={};
+      BRANDS5.forEach(b=>{
+        const val=latest.regions[region+'||'+b.id];
+        if(val)REGION_DATA[region][b.id]={score:val.weighted_avg,reviews:val.total_reviews};
+      });
+    });
+
     const BRAND_IDS = new Set(BRANDS5.map(b=>b.id));
     window._PLACES = (latest.places||[])
       .filter(p => BRAND_IDS.has(p.brand) && p.rating)
@@ -414,39 +497,55 @@ async function init(){
 
     document.getElementById('loading').style.display='none';
     document.getElementById('app').style.display='block';
+
     const initialLang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'el';
-    applyLang(initialLang);renderChart();
+    applyLang(initialLang);
+    renderChart();
+
   }catch(e){
     document.getElementById('loading').textContent='Σφάλμα φόρτωσης. Δοκιμάστε ξανά.';
     console.error(e);
   }
 }
+
 init();
 
-// ── DETAIL MODAL ──────────────────────────────────────────────────────
 let detailPage = 1;
-const DETAIL_PAGE_SIZE = 50;
 let detailSortCol = 'reviews';
 let detailSortDir = -1;
 
 function openDetail() {
-  // Populate filters
   const dBrand = document.getElementById('d-brand');
   const dRegion = document.getElementById('d-region');
-  // Clear and repopulate
+
   while(dBrand.options.length > 1) dBrand.remove(1);
   while(dRegion.options.length > 1) dRegion.remove(1);
-  BRANDS5.forEach(b => { const o = document.createElement('option'); o.value = b.id; o.textContent = b.id; dBrand.appendChild(o); });
-  REGION_ORDER.forEach(r => { const o = document.createElement('option'); o.value = r; o.textContent = T[lang].rname(r); dRegion.appendChild(o); });
+
+  BRANDS5.forEach(b => {
+    const o = document.createElement('option');
+    o.value = b.id;
+    o.textContent = b.id;
+    dBrand.appendChild(o);
+  });
+
+  REGION_ORDER.forEach(r => {
+    const o = document.createElement('option');
+    o.value = r;
+    o.textContent = T[lang].rname(r);
+    dRegion.appendChild(o);
+  });
+
   document.getElementById('detail-modal').style.display = 'block';
   document.body.style.overflow = 'hidden';
+
   detailPage = 1;
-  detailSortCol = 'rating';
+  detailSortCol = 'reviews';
   detailSortDir = -1;
-  // Set brand filter to Courier Center
-  document.getElementById('d-brand').value = 'Courier Center';
+
+  document.getElementById('d-brand').value = '';
   document.getElementById('d-region').value = '';
   document.getElementById('d-search').value = '';
+
   updateSortIcons();
   renderDetail();
 }
@@ -456,19 +555,13 @@ function closeDetail() {
   document.body.style.overflow = '';
 }
 
-function getDetailPlaces() {
-  // Get latest places from REGION_DATA — we need raw places
-  // We'll use a cached version loaded during init
-  return window._PLACES || [];
-}
-
 function renderDetail() {
   const t = T[lang];
   const bFilter = document.getElementById('d-brand').value;
   const rFilter = document.getElementById('d-region').value;
   const sFilter = document.getElementById('d-search').value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
   const pageSize = parseInt(document.getElementById('d-pagesize').value);
-  
+
   let rows = (window._PLACES || []).filter(p => {
     if(bFilter && p.brand !== bFilter) return false;
     if(rFilter && p._region !== rFilter) return false;
@@ -478,6 +571,7 @@ function renderDetail() {
     }
     return true;
   });
+
   rows.sort((a,b) => {
     const va = detailSortCol==='rating' ? (a.rating||0) : (a.reviews||0);
     const vb = detailSortCol==='rating' ? (b.rating||0) : (b.reviews||0);
@@ -487,6 +581,7 @@ function renderDetail() {
   const total = rows.length;
   const totalPages = pageSize >= 999999 ? 1 : Math.ceil(total / pageSize);
   if(detailPage > totalPages) detailPage = 1;
+
   const pageRows = rows.slice((detailPage-1)*pageSize, pageSize >= 999999 ? undefined : detailPage*pageSize);
 
   const ratingColor = r => r >= 4 ? '#059669' : r >= 3.5 ? '#065f46' : r >= 3 ? '#d97706' : '#dc2626';
@@ -495,7 +590,7 @@ function renderDetail() {
   document.getElementById('detail-tbody').innerHTML = pageRows.map(p => {
     const b = BRANDS5.find(x => x.id === p.brand);
     const regionName = t.rname(p._region || '');
-    const mapLink = p.maps_url ? `<a href="${p.maps_url}" target="_blank" style="color:var(--cc);font-size:11px">Maps ↗</a>` : '';
+    const mapLink = p.maps_url ? `<a href="${p.maps_url}" target="_blank" style="color:var(--primary);font-size:11px">Maps ↗</a>` : '';
     return `<tr style="border-bottom:.5px solid var(--border)">
       <td style="padding:8px 14px;white-space:nowrap"><img src="${b?.logo||''}" style="height:18px;width:50px;object-fit:contain;vertical-align:middle" alt="${p.brand}"></td>
       <td style="padding:8px 14px;font-size:12px;color:var(--secondary);white-space:nowrap">${regionName}</td>
@@ -506,18 +601,22 @@ function renderDetail() {
     </tr>`;
   }).join('');
 
-  // Pagination
   const pg = document.getElementById('detail-pagination');
+
   if(totalPages <= 1) {
     pg.innerHTML = `<span>${total.toLocaleString()} αποτελέσματα</span>`;
   } else {
     let btns = `<span style="margin-right:6px">${total.toLocaleString()} αποτελέσματα</span>`;
     btns += `<button onclick="detailGoPage(${detailPage-1})" ${detailPage===1?'disabled':''} style="padding:3px 10px;border-radius:6px;border:.5px solid var(--border);background:var(--card);cursor:pointer">‹</button>`;
+
     for(let p=1;p<=totalPages;p++) {
       if(p===1||p===totalPages||Math.abs(p-detailPage)<=1) {
         btns += `<button onclick="detailGoPage(${p})" style="padding:3px 10px;border-radius:6px;border:.5px solid var(--border);background:${p===detailPage?'var(--dark)':'var(--card)'};color:${p===detailPage?'#fff':'inherit'};cursor:pointer">${p}</button>`;
-      } else if(Math.abs(p-detailPage)===2) btns += `<span>…</span>`;
+      } else if(Math.abs(p-detailPage)===2) {
+        btns += `<span>…</span>`;
+      }
     }
+
     btns += `<button onclick="detailGoPage(${detailPage+1})" ${detailPage===totalPages?'disabled':''} style="padding:3px 10px;border-radius:6px;border:.5px solid var(--border);background:var(--card);cursor:pointer">›</button>`;
     pg.innerHTML = btns;
   }
@@ -531,8 +630,12 @@ function updateSortIcons() {
 }
 
 function detailSort(col) {
-  if(detailSortCol === col) { detailSortDir *= -1; }
-  else { detailSortCol = col; detailSortDir = -1; }
+  if(detailSortCol === col) {
+    detailSortDir *= -1;
+  } else {
+    detailSortCol = col;
+    detailSortDir = -1;
+  }
   updateSortIcons();
   detailPage = 1;
   renderDetail();
