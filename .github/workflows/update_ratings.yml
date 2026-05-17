@@ -3,7 +3,7 @@ name: Update ratings data
 on:
   schedule:
     # Sunday early morning Greece time: 03:15 EET / 04:15 EEST
-    - cron: "15 6 * * 0"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
