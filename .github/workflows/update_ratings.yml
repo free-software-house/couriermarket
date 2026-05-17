@@ -1,17 +1,14 @@
 name: Update ratings data
 
 on:
-  push:
-    paths:
-      - ".github/workflows/update_ratings.yml"
-
-  schedule:
-    - cron: "*/5 * * * *"
-
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-ratings
+  cancel-in-progress: false
 
 jobs:
   update-history:
