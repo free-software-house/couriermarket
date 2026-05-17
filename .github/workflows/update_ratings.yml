@@ -1,6 +1,9 @@
 name: Update ratings data
 
 on:
+  schedule:
+    - cron: "05 22 * * 6"
+
   workflow_dispatch:
 
 permissions:
